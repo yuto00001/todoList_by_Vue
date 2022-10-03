@@ -1,0 +1,28 @@
+body {
+  width: 300px;
+  margin: auto;
+}
+#list , #writing_area {
+  display: flex;
+  align-items: center;
+}
+#list span , #writing_area #delete_icon , #icon {
+  width: 10%;
+}
+#list p {
+  width: 80%;
+}
+#writing_area text {
+  width: 90%;
+}
+#writing_area #text input {
+  width: 155%;
+}
+.none_text_deco {
+  text-decoration: none;
+  opacity: 1;
+}
+.text_deco {
+  text-decoration: line-through;
+  opacity: .6;
+}
