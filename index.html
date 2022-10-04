@@ -5,11 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- 開発バージョン、便利なコンソールの警告が含まれています -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div>TODO LIST</div>
-    <div id="list_container">
+  <div id="app">TODO LIST</div>
+    <!-- <div id="list_container">
       <div id="list">
         <span id="span_input"><input id="checkbox" type="checkbox"></span>
         <p id="p">list item</p>
@@ -19,6 +21,20 @@
     <div id="writing_area">
       <span id="icon">&gt;</span>
       <span id="text"><input id="input_text" type="text"></span>
+    </div> -->
+
+    <div id="list_container">
+      <div id="list">
+        <span id="span_input"><input id="checkbox" type="checkbox"></span>
+        <p id="p" v-text="listItem"></p>
+        <span id="delete_icon">&#x2613;</span>
+      </div>
+    </div>
+
+    <div id="writing_area">
+      <span id="icon">&gt;</span>
+      <span id="text"><input id="input_text" type="text" v-model="textInput"></span>
+      <span id="add_icon" v-on:click="add_icon" v-text="add"></span>
     </div>
     <script src="main.js"></script>
 </body>

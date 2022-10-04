@@ -2,7 +2,7 @@ body {
   width: 300px;
   margin: auto;
 }
-#list , #writing_area {
+#list {
   display: flex;
   align-items: center;
 }
@@ -16,7 +16,7 @@ body {
   width: 90%;
 }
 #writing_area #text input {
-  width: 155%;
+  width: 70%;
 }
 .none_text_deco {
   text-decoration: none;
@@ -25,4 +25,11 @@ body {
 .text_deco {
   text-decoration: line-through;
   opacity: .6;
+}
+#icon {
+  display: inline-block;
+}
+#add_icon {
+  font-size: 13px;
+  width: 10%;
 }
