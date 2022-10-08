@@ -57,11 +57,69 @@ const lists = function() {
   list.append(delete_icon);
 }
 
-document.onkeydown = function(event) {
-if(event.key === 'Enter') {
-  lists();
-  input.value = '';
-}
-}
+// document.onkeydown = function(event) {
+// if(event.key === 'Enter') {
+//   lists();
+//   input.value = '';
+// }
+// }
+
+/*
+input.value が機能しなくなった。
+
+{{ }}での表示と v-text= での表示は何が違う？
+
+●list_text と textInput をうまく使ってフォームに入力された値を表示したい。※ 親要素が異なっている。
+*/
+
+var list_vue = new Vue({
+  el: "#list",
+  data:{
+    listItem: "list item",
+    list_text:"[]",
+  },
+})
+var writing_area_vue = new Vue({
+  el: "#writing_area",
+  data:{
+    textInput:"",
+    add: "追加",
+  },
+  methods: {
+    add_icon: function(){
+      console.log('test')
+      list_vue().list_text.push(this.textInput)
+      lists();
+    }
+  }
+})
+
+/*
+ーデータとDOMの結びつけはHTML上で行う
+ーー紐付けはHTML、記述はVueが担うから、UIとデータがリンクする？
+ーーVueの全ての記述は引数としてHTMLの該当箇所に紐づけられる。
+
+まずVue.jsで書き直す
+ーUIをVueで書く
+ーイベントをVueで書く
 
 
+FirebaseのWebAPI(dataBase)を取り入れる。
+【https://www.ipride.co.jp/blog/3479】
+【https://firebase.google.com/docs/auth/web/password-auth?hl=ja】
+【https://cloud.google.com/endpoints/docs/openapi/authenticating-users-firebase?hl=ja】
+ーFirebaseでプロジェクトを作成
+ーAuthentication(認証) の欄から設定を行う
+ー別ファイルに認証コードを添付
+ーーいちおうユーザーからの閲覧不可にしたい
+ーーーどうやるんだっけ？？
+ーユーザーIDを受け取って端末?に返す情報を選別する
+ーーFirebase がやってくれるのか自分でやるのか？？
+
+データのやり取りができるように。
+ーどうにかして紐づける
+ーどうにかして記憶させる
+
+DOM操作による表示
+
+*/
